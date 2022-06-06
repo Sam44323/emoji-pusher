@@ -3,11 +3,6 @@ import { View, Text } from "react-native";
 
 import styles from "../styles/Box.styles";
 
-interface BoxProps {
-  children: any;
-  title: string;
-}
-
 const Box: React.FC<{ title: string }> = (props) => {
   return (
     <View style={styles.container}>
