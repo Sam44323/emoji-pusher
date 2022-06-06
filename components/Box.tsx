@@ -10,8 +10,13 @@ interface BoxProps {
   title: string;
 }
 
-const interval = 750;
+const INTERVAL = 750;
 
+/**
+ * @prop children - the emoji
+ * @prop title - the title of the emoji
+ * @returns a box with the emoji and title with animation on click
+ */
 const Box: React.FC<BoxProps> = (props) => {
   const animatedValue = new Animated.Value(1);
   const animatedStyles = {
@@ -21,17 +26,17 @@ const Box: React.FC<BoxProps> = (props) => {
   const scaleDownHandler = () => {
     Animated.timing(animatedValue, {
       toValue: 0.5,
-      duration: interval,
+      duration: INTERVAL,
       useNativeDriver: true,
     }).start();
 
-    setTimeout(scaleUpHandler, interval);
+    setTimeout(scaleUpHandler, INTERVAL);
   };
 
   const scaleUpHandler = () => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: interval,
+      duration: INTERVAL,
       useNativeDriver: true,
     }).start();
   };
