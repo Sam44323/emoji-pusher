@@ -1,8 +1,10 @@
 import React from "react";
 import { Text, Pressable, Animated } from "react-native";
 
+// styles
 import styles from "../styles/Box.styles";
 
+// interface
 interface BoxProps {
   children: any;
   title: string;
