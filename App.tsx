@@ -1,5 +1,7 @@
-import { StyleSheet, View } from "react-native";
 import Emoji from "react-native-emoji";
+import { View } from "react-native";
+
+import styles from "./styles/App.styles";
 
 // components
 import Box from "./components/Box";
@@ -33,16 +35,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  contentContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "100%",
-  },
-});
