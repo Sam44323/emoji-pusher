@@ -1,14 +1,25 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 import styles from "../styles/Box.styles";
 
-const Box: React.FC<{ title: string }> = (props) => {
+interface BoxProps {
+  children: any;
+  title: string;
+}
+
+const Box: React.FC<BoxProps> = (props) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.iconContainer}></View>
+    <Pressable
+      android_ripple={{ color: "#ccc", radius: 0 }}
+      style={({ pressed }) => [
+        pressed ? styles.pressed : null,
+        styles.container,
+      ]}
+    >
+      <Text>{props.children}</Text>
       <Text style={styles.titleText}>{props.title}</Text>
-    </View>
+    </Pressable>
   );
 };
 
