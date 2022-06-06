@@ -9,6 +9,8 @@ interface BoxProps {
   title: string;
 }
 
+const interval = 750;
+
 const Box: React.FC<BoxProps> = (props) => {
   const animatedValue = new Animated.Value(1);
   const animatedStyles = {
@@ -18,17 +20,17 @@ const Box: React.FC<BoxProps> = (props) => {
   const scaleDownHandler = () => {
     Animated.timing(animatedValue, {
       toValue: 0.5,
-      duration: 750,
+      duration: interval,
       useNativeDriver: true,
     }).start();
 
-    setTimeout(scaleUpHandler, 750);
+    setTimeout(scaleUpHandler, interval);
   };
 
   const scaleUpHandler = () => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: 750,
+      duration: interval,
       useNativeDriver: true,
     }).start();
   };
